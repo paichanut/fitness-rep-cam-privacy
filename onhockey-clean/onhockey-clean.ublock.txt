@@ -1,0 +1,20 @@
+! Title: OnHockey Clean
+! Description: Removes ads and popunders from onhockey.tv
+! Expires: 7 days
+! Homepage: https://github.com/paichanut/fitness-rep-cam-privacy
+
+! --- Ad network / popunder hosts
+||everyoneconsole.com^$3p
+||highperformanceformat.com^$3p
+||profitablecpmrate.com^$3p
+||effectivegatecpm.com^$3p
+||clocklink.com^$3p,domain=onhockey.tv
+
+! --- Popunder / window.open hijacks
+onhockey.tv##+js(no-window-open-if)
+onhockey.tv##+js(set-constant, atOptions, undefined)
+onhockey.tv##+js(abort-on-property-read, atOptions)
+
+! --- Leftover empty ad slots
+onhockey.tv##table[height="60"]
+onhockey.tv##marquee
